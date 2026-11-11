@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
+
+# Env
+.env
+*.env
+!.env.example
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store
+
+# Data (synthetic/generated data isn't committed by default; documented separately)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Storage (uploaded invoices - never committed)
+storage/
+
+# Python virtual environments
+.venv/

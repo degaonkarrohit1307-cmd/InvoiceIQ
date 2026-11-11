@@ -1,0 +1,51 @@
+:root {
+  --navy-950: #07111f;
+  --navy-900: #0b1728;
+  --navy-800: #11243b;
+  --navy-700: #193452;
+  --cyan-400: #38bdf8;
+  --cyan-300: #7dd3fc;
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --border: #e5eaf0;
+  --border-strong: #d7e0e9;
+  --text: #142033;
+  --text-muted: #65748a;
+  --text-soft: #8895a7;
+  --accent: #2163d5;
+  --accent-hover: #1855bf;
+  --accent-soft: #edf4ff;
+  --success: #16845b;
+  --success-soft: #e9f7f0;
+  --warning: #a86916;
+  --warning-soft: #fff6e8;
+  --danger: #b64040;
+  --danger-soft: #fff0ef;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-height: 100%; width: 100%; }
+body { min-width: 320px; min-height: 100vh; background: var(--bg); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); }
+::selection { color: #fff; background: #2769d8; }
+:focus-visible { outline: 3px solid rgba(33, 99, 213, 0.35); outline-offset: 2px; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

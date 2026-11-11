@@ -1,0 +1,52 @@
+# --- Phase 1: Project Foundation ---
+# ML/OCR/fraud-detection dependencies are intentionally NOT included here yet.
+# They will be added in Phase 3 (OCR) and Phase 6 (fraud detection) per the
+# phased execution plan, to avoid installing unused heavy dependencies early.
+
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+pydantic-settings==2.7.1
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
+alembic==1.14.0
+python-dotenv==1.0.1
+python-multipart==0.0.20
+
+# --- Testing ---
+pytest==8.3.4
+pytest-cov==6.0.0
+httpx==0.28.1
+
+# --- Phase 2: Invoice Ingestion ---
+# python-magic wraps the system libmagic library for content-based
+# (magic-byte) MIME sniffing. libmagic ships by default on Linux and macOS,
+# but NOT on Windows -- installing plain `python-magic` there raises
+# "failed to find libmagic" at import/runtime. `python-magic-bin` bundles a
+# prebuilt libmagic DLL for Windows, so it's selected there instead via the
+# platform marker below. Only one of the two is ever installed for a given
+# platform/interpreter.
+python-magic==0.4.27; sys_platform != "win32"
+python-magic-bin==0.4.14; sys_platform == "win32"
+
+# --- Phase 3: OCR & Structured Invoice Extraction ---
+pymupdf==1.25.5
+Pillow==11.1.0
+pytesseract==0.3.13
+reportlab==4.2.5
+
+# --- Phase 4C: ML Fraud Detection ---
+scikit-learn==1.5.2
+lightgbm==4.5.0
+joblib==1.4.2
+
+# --- Phase 4C: ML Fraud Detection ---
+scikit-learn==1.5.2
+lightgbm==4.5.0
+joblib==1.4.2
+
+# --- Phase 5: LangGraph orchestration ---
+langgraph==0.2.62
+
+# --- Phase 7: SHAP Explainability ---
+shap==0.53.0
